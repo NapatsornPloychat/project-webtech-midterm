@@ -8,7 +8,6 @@ use App\Models\Status;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -62,7 +61,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->contact = $request->input('contact');
-
+        $post->agency = $request->input('tags');
         if($request->hasFile('image')){
             $file=$request->file('image');
             $extention=$file->getClientOriginalExtension();
@@ -86,15 +85,8 @@ class PostController extends Controller
 //        $post->image = $path;
 
         $post->vote_count = 0;
-
-
-
         $post->user_id = $request->user()->id;
-
         $post->save();
-
-
-
         $tags = $request->get('tags');
         $tag_ids = $this->syncTags($tags);
         $post->tags()->sync($tag_ids);
@@ -124,8 +116,6 @@ class PostController extends Controller
         }
         return $tag_ids;
     }
-
-
 
     /**
      * Display the specified resource.
@@ -178,9 +168,13 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->contact = $request->input('contact');
-        $post->status = $request->input('status');
-//        return public/images/filename
+        if(Auth::user()==="USER") {
+            $post->agency = $request->input('tags');
+        }
 
+        if($request->input('status')!==null){
+            $post->status = $request->input('status');
+        }
         if($request->hasFile('image')){
             $file=$request->file('image');
             $extention=$file->getClientOriginalExtension();

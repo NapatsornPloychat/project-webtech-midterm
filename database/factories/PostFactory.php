@@ -25,6 +25,7 @@ class PostFactory extends Factory
             'contact' => fake()->safeEmail(),
             'anonymous' => fake()->numberBetween(0, 1),
             'status' => fake()->randomElement(['รอดำเนินการ','กำลังดำเนินการ','เสร็จสิ้น']),
+            'agency' => fake()->randomElement(['การลงทะเบียน','อุปกรณ์ในห้องเรียน','สิ่งแวดล้อมในมหาวิทยาลัย','รถโดยสารภายในมหาวิทยาลัย','บุคลากร','อื่นๆ']),
             'vote_count' => fake()->numberBetween(0, 1000)
         ];
     }

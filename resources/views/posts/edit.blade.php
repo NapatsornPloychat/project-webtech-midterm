@@ -26,16 +26,16 @@
             </div>
 
             <div class="relative z-0 mb-6 w-full group">
-                <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Category (tags) </label>
+                <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Category </label>
                 <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         name="tags" value="{{ old('tags', $tags) }}"
                         placeholder="" autocomplete="on" @if(Auth::user()->role == 'STAFF') disabled @endif>
-                    <option tags="การลงทะเบียน" {{ old('tags', $tags) == 'การลงทะเบียนเรียน' ? 'selected' : ''}}>การลงทะเบียน</option>
-                    <option tags="อุปกรณ์ในห้องเรียน" {{ old('tags', $tags) == 'อุปกรณ์ในห้องเรียน' ? 'selected' : ''}}>อุปกรณ์ในห้องเรียน</option>
-                    <option tags="สิ่งแวดล้อมในมหาวิทยาลัย" {{ old('tags', $tags) == 'สิ่งแวดล้อมในมหาวิทยาลัย' ? 'selected' : ''}}>สิ่งแวดล้อมในมหาวิทยาลัย</option>
-                    <option tags="รถโดยสารภายในมหาวิทยาลัย" {{ old('tags', $tags) == 'รถโดยสารภายในมหาวิทยาลัย' ? 'selected' : ''}}>รถโดยสารภายในมหาวิทยาลัย</option>
-                    <option tags="บุคลากร" {{ old('tags', $tags) == 'บุคลากร' ? 'selected' : ''}}>บุคลากร</option>
-                    <option tags=อื่นๆ" {{ old('tags', $tags) == 'อื่นๆ' ? 'selected' : ''}}>อื่นๆ</option>
+                    <option value="การลงทะเบียน" {{ old('tags', $tags) == 'การลงทะเบียนเรียน' ? 'selected' : ''}}>การลงทะเบียน</option>
+                    <option value="อุปกรณ์ในห้องเรียน" {{ old('tags', $tags) == 'อุปกรณ์ในห้องเรียน' ? 'selected' : ''}}>อุปกรณ์ในห้องเรียน</option>
+                    <option value="สิ่งแวดล้อมในมหาวิทยาลัย" {{ old('tags', $tags) == 'สิ่งแวดล้อมในมหาวิทยาลัย' ? 'selected' : ''}}>สิ่งแวดล้อมในมหาวิทยาลัย</option>
+                    <option value="รถโดยสารภายในมหาวิทยาลัย" {{ old('tags', $tags) == 'รถโดยสารภายในมหาวิทยาลัย' ? 'selected' : ''}}>รถโดยสารภายในมหาวิทยาลัย</option>
+                    <option value="บุคลากร" {{ old('tags', $tags) == 'บุคลากร' ? 'selected' : ''}}>บุคลากร</option>
+                    <option value=อื่นๆ" {{ old('tags', $tags) == 'อื่นๆ' ? 'selected' : ''}}>อื่นๆ</option>
                 </select>
             </div>
 
@@ -90,9 +90,9 @@
                 <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         name="status" value="{{ old('status', $post->status) }}"
                         placeholder="" autocomplete="on">
-                    <option status="รอดำเนินการ" {{ old('status', $post->status) == 'รอดำเนินการ' ? 'selected' : ''}}>รอดำเนินการ</option>
-                    <option status="กำลังดำเนินการ" {{ old('status', $post->status) == 'กำลังดำเนินการ' ? 'selected' : ''}}>กำลังดำเนินการ</option>
-                    <option status="เสร็จสิ้น" {{ old('status', $post->status) == 'เสร็จสิ้น' ? 'selected' : ''}}>เสร็จสิ้น</option>
+                    <option value="รอดำเนินการ" {{ old('status', $post->status) == 'รอดำเนินการ' ? 'selected' : ''}}>รอดำเนินการ</option>
+                    <option value="กำลังดำเนินการ" {{ old('status', $post->status) == 'กำลังดำเนินการ' ? 'selected' : ''}}>กำลังดำเนินการ</option>
+                    <option value="เสร็จสิ้น" {{ old('status', $post->status) == 'เสร็จสิ้น' ? 'selected' : ''}}>เสร็จสิ้น</option>
 
                 </select>
             </div>

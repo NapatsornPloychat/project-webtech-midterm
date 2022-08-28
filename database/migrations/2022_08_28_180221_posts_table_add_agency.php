@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('agency')->after('role')->nullable();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('agency')->after('status');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('agency');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeignIdFor(\App\Models\User::class);
         });
     }
 };
