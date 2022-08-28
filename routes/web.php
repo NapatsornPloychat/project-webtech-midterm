@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return redirect()->route('posts.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[AdminController::class,'dashBoard'])->name('dashBoard');
 
 require __DIR__.'/auth.php';
 
@@ -36,3 +35,4 @@ Route::resource('/posts', \App\Http\Controllers\PostController::class);
 
 
 Route::resource('/tags', \App\Http\Controllers\TagController::class);
+Route::resource('/admin',AdminController::class);

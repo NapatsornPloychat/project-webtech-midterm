@@ -97,6 +97,10 @@ class PostPolicy
         return $user->isAdmin();
     }
 
+    public function dashBoard(User $user){
+        return $user->isAdmin();
+    }
+
 
 
 }

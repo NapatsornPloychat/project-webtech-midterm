@@ -32,12 +32,14 @@
                             </a>
                         </li>
                     @endcan
-                    <li>
-                        <a href="{{ route('posts.tracker') }}"
-                           class="block py-2 pr-4 pl-3 rounded md:p-0 hover:underline @if(Route::currentRouteName() === 'posts.tracker') current-page @endif" >
-                            Post Tracker
-                        </a>
-                    </li>
+                    @can('dashBoard', \App\Models\Post::class)
+                        <li>
+                            <a href="{{ route('dashBoard') }}"
+                            class="block py-2 pr-4 pl-3 rounded md:p-0 hover:underline @if(Route::currentRouteName() === 'posts.create') current-page @endif">
+                                Dash Board
+                            </a>
+                        </li>
+                    @endcan
 
                     <li>
                         <a href="{{ route('tags.index') }}"
