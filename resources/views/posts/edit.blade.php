@@ -22,14 +22,14 @@
                 <input type="text" name="title" id="title"
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                        value="{{ old('title', $post->title) }}"
-                       placeholder="" required>
+                       placeholder="" required @if(Auth::user()->role == 'STAFF') readonly @endif>
             </div>
 
             <div class="relative z-0 mb-6 w-full group">
                 <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Category (tags) </label>
                 <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         name="tags" value="{{ old('tags', $tags) }}"
-                        placeholder="" autocomplete="on">
+                        placeholder="" autocomplete="on" @if(Auth::user()->role == 'STAFF') disabled @endif>
                     <option tags="การลงทะเบียน" {{ old('tags', $tags) == 'การลงทะเบียนเรียน' ? 'selected' : ''}}>การลงทะเบียน</option>
                     <option tags="อุปกรณ์ในห้องเรียน" {{ old('tags', $tags) == 'อุปกรณ์ในห้องเรียน' ? 'selected' : ''}}>อุปกรณ์ในห้องเรียน</option>
                     <option tags="สิ่งแวดล้อมในมหาวิทยาลัย" {{ old('tags', $tags) == 'สิ่งแวดล้อมในมหาวิทยาลัย' ? 'selected' : ''}}>สิ่งแวดล้อมในมหาวิทยาลัย</option>
@@ -52,7 +52,7 @@
                 @enderror
                 <textarea rows="4" type="text" name="description" id="description"
                           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          required >{{ old('description', $post->description) }}</textarea>
+                          required @if(Auth::user()->role == 'STAFF') readonly @endif>{{ old('description', $post->description) }}</textarea>
             </div>
 
             <div class="relative z-0 mb-6 w-full group">
@@ -67,7 +67,7 @@
                 <input type="text" name="contact" id="title"
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                        value="{{ old('contact', $post->contact) }}"
-                       placeholder="" required>
+                       placeholder="" required @if(Auth::user()->role == 'STAFF') readonly @endif>
             </div>
 
 
@@ -78,7 +78,7 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Update image</label>
                 <input type="file" name="image"
                        class="bg-gray-50 border @error('contact') border-red-600 @else border-gray-300 @enderror text-gray-900"
-                       value="{{'image',($post->image)}}" placeholder="" >
+                       value="{{'image',($post->image)}}" placeholder="" @if(Auth::user()->role == 'STAFF') disabled @endif>
 
 
 

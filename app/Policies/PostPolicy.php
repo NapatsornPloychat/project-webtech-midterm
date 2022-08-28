@@ -30,16 +30,6 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-//        if(!($user->isStaff())){
-//            return true;
-//        }
-//        else{
-//            if($user->agency === $post->tag->name) {
-//                return true;
-//            }else{
-//                return false;
-//            }
-//        }
 
         return true;
 
@@ -67,7 +57,7 @@ class PostPolicy
     public function update(User $user, Post $post)
     {
 //        $user->isAdmin() or
-        return $user->isStaff() or
+        return ($user->isStaff())or
             ($user->isUser() and $user->id === $post->user_id);
     }
 
@@ -107,15 +97,6 @@ class PostPolicy
         return $user->isAdmin();
     }
 
-    /**
-     * Determine whether the user can permanently delete the post.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function isStaff(User $user)
-    {
-        return $user->isStaff();
-    }
+
+
 }

@@ -7,7 +7,9 @@
             All Posts
         </h1>
         <div class="my-1 px-8 py-2 flex flex-wrap justify-between space-y-6">
+{{--            @if(Auth::user() and Auth::user()->role === 'STAFF')--}}
 
+{{--            @else--}}
 
                 @foreach($posts as $post)
                     <a href="{{ route('posts.show', ['post' => $post->id]) }}"
@@ -37,7 +39,7 @@
                         </p>
                     </a>
                 @endforeach
-
+{{--            @endif--}}
         </div>
     </section>
 
