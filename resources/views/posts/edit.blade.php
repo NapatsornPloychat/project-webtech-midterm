@@ -35,7 +35,7 @@
                     <option value="สิ่งแวดล้อมในมหาวิทยาลัย" {{ old('tags', $tags) == 'สิ่งแวดล้อมในมหาวิทยาลัย' ? 'selected' : ''}}>สิ่งแวดล้อมในมหาวิทยาลัย</option>
                     <option value="รถโดยสารภายในมหาวิทยาลัย" {{ old('tags', $tags) == 'รถโดยสารภายในมหาวิทยาลัย' ? 'selected' : ''}}>รถโดยสารภายในมหาวิทยาลัย</option>
                     <option value="บุคลากร" {{ old('tags', $tags) == 'บุคลากร' ? 'selected' : ''}}>บุคลากร</option>
-                    <option value=อื่นๆ" {{ old('tags', $tags) == 'อื่นๆ' ? 'selected' : ''}}>อื่นๆ</option>
+                    <option value="อื่นๆ" {{ old('tags', $tags) == 'อื่นๆ' ? 'selected' : ''}}>อื่นๆ</option>
                 </select>
             </div>
 
