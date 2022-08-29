@@ -168,7 +168,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->contact = $request->input('contact');
-        if(Auth::user()==="USER") {
+        if($request->input('tags')!==null) {
             $post->agency = $request->input('tags');
         }
 
