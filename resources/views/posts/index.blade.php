@@ -11,7 +11,7 @@
                 @foreach($posts as $post)
                     @if(Auth::user()->agency === $post->agency)
                         <a href="{{ route('posts.show', ['post' => $post->id]) }}"
-                           class="block p-6 w-full bg-red-300 rounded-lg border border-gray-200 shadow-md hover:bg-amber-200 ">
+                           class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-50 ">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                                 {{ $post->title }}
                             </h5>
@@ -44,7 +44,7 @@
                 @foreach($posts as $post)
 
                     <a href="{{ route('posts.show', ['post' => $post->id]) }}"
-                       class="block p-6 w-full bg-red-300 rounded-lg border border-gray-200 shadow-md hover:bg-amber-200 ">
+                       class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-50 ">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                             {{ $post->title }}
                         </h5>
