@@ -194,12 +194,6 @@ class PostController extends Controller
         return redirect()->route('posts.show', ['post' => $post->id]);
     }
 
-//    public function updateStatus(Request $request,Post $post){
-//        $this->authorize('updateStatus',$post);
-//        $post->status=$request->input('status');
-//        $post->save();
-//        return redirect()->route('posts.show',['post'=>$post->id]);
-//    }
 
     /**
      * Remove the specified resource from storage.
@@ -237,18 +231,6 @@ class PostController extends Controller
 
     public function votePost(Post $post)
     {
-//        $user_id = Auth::user()->id;
-//        $post = Post::find($id);
-//        $like = DB::table('likeable_likes')->where('user_id',str($user_id))
-//            ->where('likeable_id',$id)->first();
-//        if ($like != null){
-//            $post->unlike();
-//        }
-//        else{
-//            $post->like();
-//        }
-//        $post->view_count += 1;
-//        $post->save();
 
         if (is_int($post->vote_count)) {
             $post->vote_count = $post->vote_count + 1;

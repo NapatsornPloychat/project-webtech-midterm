@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="bg-white">
+<body>
 
     @include('layouts._navbar')
 
